@@ -50,7 +50,7 @@ public:
 	void DataCreate(int numbers[], int size) {
 		for (int i = 0; i < size; i++) {
 			srand(time(0));
-			if (i % 5 == 0) system("ping -n 0.5 127.0.0.1 > nul");
+			if (i % 5 == 0) system("ping -n 0.5 127.0.0.1 > nul");//это не имеет особого значения...
 			//numbers[i] = ((rand() % 48) * pow(-1, size - i) - (rand() % 64) * pow(-1, i+1));
 			numbers[i] = (rand() % 100) - 70 + i;
 			if (numbers[i] > (-10) && numbers[i] < 10) {
