@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <conio.h>
 
-
+//UNCOMPLETED
 using namespace std;
 
 class Files {
@@ -63,24 +63,28 @@ public:
 
 int main() {
 	Files RandomData;
-	int mas_size = 100000000;
-	int* numbers =new int[mas_size];
-	int size = 0;
-	cout << "Array size ( < 32368) ->>";
-	cin >> size;
 	ifstream fin;
 	ofstream fout;
+	for (int i = 0; i < 10; i++) {
+		int mas_size = 100000000;
+		int* numbers = new int[mas_size];
+		//int size = 0;
+		//cout << "Array size ( < 32368) ->>";
+		//cin >> size;
 
-	//txt
-	RandomData.DataCreate(numbers, size);//Создаёт массив чисел
-	RandomData.FileScript_SaveExit("B62TextIN.txt", numbers, size);//Заполняет и закрывает файл
-	RandomData.FileSort_and_out("B62TextIN.txt", "B62TextOUT.txt", size, numbers);
+
+		//txt
+		RandomData.DataCreate(numbers, mas_size);//Создаёт массив чисел
+		RandomData.FileScript_SaveExit("B62TextIN.txt", numbers, mas_size);//Заполняет и закрывает файл
+		RandomData.FileSort_and_out("B62TextIN.txt", "B62TextOUT.txt", mas_size, numbers);
 
 
-	//bin
-	srand(time(0));
-	RandomData.DataCreate(numbers, size);//Создаёт массив чисел
-	RandomData.FileScript_SaveExit("B62TextIN.bin", numbers, size);//Заполняет и закрывает файл
-	RandomData.FileSort_and_out("B62TextIN.bin", "B62TextOUT.bin", size, numbers);
-	//Сортирует данные из файла 1 и записыват их в файл 2
+		//bin
+		srand(time(0));
+		RandomData.DataCreate(numbers, mas_size);//Создаёт массив чисел
+		RandomData.FileScript_SaveExit("B62TextIN.bin", numbers, mas_size);//Заполняет и закрывает файл
+		RandomData.FileSort_and_out("B62TextIN.bin", "B62TextOUT.bin", mas_size, numbers);
+		//Сортирует данные из файла 1 и записыват их в файл 2
+		delete[] numbers;
+	}
 }

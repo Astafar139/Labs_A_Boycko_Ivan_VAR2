@@ -5,6 +5,8 @@
 #include <math.h>
 
 
+
+
 int min_int_id = 0;
 int max_int_id = 0;
 int result_array_size;
